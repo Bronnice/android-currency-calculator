@@ -12,7 +12,9 @@
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:backgroundTint="#B1AEAE"
+        android:onClick="numTwoClicked"
         android:text="2"
+        android:textColor="#424242"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
@@ -25,20 +27,24 @@
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:backgroundTint="#B1AEAE"
+        android:onClick="numNineClicked"
         android:text="9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.946"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.674" />
+        app:layout_constraintVertical_bias="0.674"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/num0"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:backgroundTint="#B1AEAE"
+        android:onClick="numZeroClicked"
         android:text="0"
+        android:textColor="#424242"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
@@ -52,7 +58,9 @@
         android:layout_height="110dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#B1AEAE"
+        android:onClick="numFiveClicked"
         android:text="5"
+        android:textColor="#424242"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
@@ -66,7 +74,9 @@
         android:layout_height="110dp"
         android:layout_marginTop="12dp"
         android:backgroundTint="#B1AEAE"
+        android:onClick="numSevenClicked"
         android:text="7"
+        android:textColor="#424242"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
@@ -80,7 +90,9 @@
         android:layout_height="110dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#B1AEAE"
+        android:onClick="numEightClicked"
         android:text="8"
+        android:textColor="#424242"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.508"
@@ -93,7 +105,7 @@
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:backgroundTint="#B1AEAE"
-        android:onClick="oneClocked"
+        android:onClick="numOneClicked"
         android:text="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -107,7 +119,9 @@
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:backgroundTint="#B1AEAE"
+        android:onClick="numThirdClicked"
         android:text="3"
+        android:textColor="#424242"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.946"
@@ -121,7 +135,9 @@
         android:layout_height="110dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#B1AEAE"
+        android:onClick="numSixClicked"
         android:text="6"
+        android:textColor="#424242"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.946"
@@ -135,6 +151,7 @@
         android:layout_height="110dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#B1AEAE"
+        android:onClick="numFourClicked"
         android:text="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -144,7 +161,7 @@
         app:layout_constraintVertical_bias="0.464" />
 
     <Button
-        android:id="@+id/buttonCalculaate"
+        android:id="@+id/buttonCalculate"
         android:layout_width="124dp"
         android:layout_height="68dp"
         android:layout_marginStart="36dp"
@@ -155,7 +172,8 @@
         app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.845" />
+        app:layout_constraintVertical_bias="0.845"
+        tools:ignore="TextContrastCheck" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -247,8 +265,10 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <RadioGroup
+        android:id="@+id/currencyGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="currencyButtonClicked"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.096"
@@ -257,18 +277,18 @@
         app:layout_constraintVertical_bias="0.947">
 
         <RadioButton
-            android:id="@+id/eurRradio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="EUR"
-            android:textColor="#FFFFFF" />
-
-        <RadioButton
             android:id="@+id/rubRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="RUB"
+            android:textColor="#FFFFFF" />
+
+        <RadioButton
+            android:id="@+id/eurRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EUR"
             android:textColor="#FFFFFF" />
 
         <RadioButton
