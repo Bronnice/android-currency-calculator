@@ -29,6 +29,7 @@
         android:backgroundTint="#B1AEAE"
         android:onClick="numNineClicked"
         android:text="9"
+        android:textColor="#424242"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.946"
@@ -107,6 +108,7 @@
         android:backgroundTint="#B1AEAE"
         android:onClick="numOneClicked"
         android:text="1"
+        android:textColor="#424242"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
@@ -153,6 +155,7 @@
         android:backgroundTint="#B1AEAE"
         android:onClick="numFourClicked"
         android:text="4"
+        android:textColor="#424242"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.059"
@@ -161,11 +164,28 @@
         app:layout_constraintVertical_bias="0.464" />
 
     <Button
-        android:id="@+id/buttonCalculate"
+        android:id="@+id/buttonClean"
         android:layout_width="124dp"
         android:layout_height="68dp"
         android:layout_marginStart="36dp"
         android:backgroundTint="#FF9800"
+        android:onClick="cleanClicked"
+        android:text="Clean"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.953"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/buttonCalculate2"
+        android:layout_width="124dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="36dp"
+        android:backgroundTint="#FF9800"
+        android:onClick="calculateClicked"
         android:text="Calculate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -281,6 +301,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
+            android:onClick="currencyButtonClicked"
             android:text="RUB"
             android:textColor="#FFFFFF" />
 
@@ -288,6 +309,7 @@
             android:id="@+id/eurRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="currencyButtonClicked"
             android:text="EUR"
             android:textColor="#FFFFFF" />
 
@@ -295,6 +317,7 @@
             android:id="@+id/dolRadio"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="currencyButtonClicked"
             android:text="DOL"
             android:textColor="#FFFFFF" />
     </RadioGroup>

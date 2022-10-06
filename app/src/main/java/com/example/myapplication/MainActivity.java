@@ -9,41 +9,50 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView rub, eur, dol;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        rub = findViewById(R.id.rubField);
+        eur = findViewById(R.id.eurField);
+        dol = findViewById(R.id.dolField);
+
+        RadioButton rb = findViewById(R.id.rubRadio);
+        rb.setChecked(true);
     }
 
-    int currencyRadioChecker = 0;
-    int sum = 0;
-
-    TextView rub = findViewById(R.id.rubField);
-    TextView eur = findViewById(R.id.eurField);
-    TextView dol = findViewById(R.id.dolField);
-
+    int currencyRadioChecker = 1;
 
     public void numAdd(int num) {
-        sum += num;
+        System.out.println("нажата " + num);
         switch (this.currencyRadioChecker) {
             case (1): {
-                rub.append(String.valueOf(num));
+                rub.setText(rub.getText() + String.valueOf(num));
             }
             break;
             case (2): {
-                eur.append(String.valueOf(num));
+                eur.setText(eur.getText() + String.valueOf(num));
             }
             break;
             case (3): {
-                dol.append(String.valueOf(num));
+                dol.setText(dol.getText() + String.valueOf(num));
             }
             break;
         }
     }
 
     public void currencyButtonClicked(View view) {
+        rub.setText("");
+        eur.setText("");
+        dol.setText("");
+
         // если переключатель отмечен
         boolean checked = ((RadioButton) view).isChecked();
+        System.out.println("выбран " + currencyRadioChecker + " режим");
+
         // Получаем нажатый переключатель
         switch (view.getId()) {
             case (R.id.rubRadio):
@@ -105,6 +114,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculateClicked(View view){
+        double temporarySum;
+        switch (this.currencyRadioChecker) {
+            case (1): {
+                temporarySum = Double.parseDouble(String.valueOf(rub.getText())) / 59.0;
+                eur.setText(temporarySum + "");
+                temporarySum = Double.parseDouble(String.valueOf(rub.getText())) / 60.0;
+                dol.setText((temporarySum) + "");
+            }
+            break;
+            case (2): {
+                temporarySum = Double.parseDouble(String.valueOf(eur.getText())) / 0.017;
+                rub.setText(temporarySum + "");
+                temporarySum = Double.parseDouble(String.valueOf(eur.getText())) * 0.99;
+                dol.setText(temporarySum  + "");
+            }
+            break;
+            case (3): {
+                temporarySum = Double.parseDouble(String.valueOf(dol.getText())) / 0.017;
+                rub.setText(temporarySum + "");
+                temporarySum = Double.parseDouble(String.valueOf(dol.getText())) * 1.01;
+                eur.setText(temporarySum + "");
+            }
+            break;
+        }
         }
 
+    public void cleanClicked(View view){
+        rub.setText("");
+        eur.setText("");
+        dol.setText("");
+        System.out.println("строки очищены");
+    }
 }
